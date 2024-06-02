@@ -1,5 +1,6 @@
 import { ChevronsDown, Download } from 'lucide-react';
 import { Button } from '../ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTrigger } from '../ui/dialog';
 import Section from './Section';
 
 const DownloadSection = () => {
@@ -22,9 +23,23 @@ const DownloadSection = () => {
 									DOWNLOAD VELO ARCHIVE v2.1.3
 								</Button>
 							</a>
-							<Button variant="secondary" className="text-lg font-extrabold">
-								INSTALLATION INSTRUCTIONS
-							</Button>
+							<Dialog>
+								<DialogTrigger>
+									<Button variant="secondary" className="text-lg font-extrabold">
+										INSTALLATION INSTRUCTIONS
+									</Button>
+								</DialogTrigger>
+								<DialogContent>
+									<DialogHeader>Installation Instructions</DialogHeader>
+									<DialogDescription>
+										<ol type="1" className="list-decimal pl-5">
+											<li>Open Steam, right click "SpeedRunners" in your games list, hover over "Manage" and click on "Browse local files".</li>
+											<li>Open the Velo .zip file, select all files and folders and drag them into the game's installation directory. When asked, just click "Replace the files in the destination".</li>
+											<li>After that, you can launch your game from Steam like normal.</li>
+										</ol>
+									</DialogDescription>
+								</DialogContent>
+							</Dialog>
 						</div>
 					</div>
 					<div
