@@ -34,6 +34,6 @@
 	body,
 	#root,
 	html {
-		@apply bg-background text-foreground m-0 h-full;
+		@apply bg-background text-foreground m-0 h-full [font-family:'Roboto'];
 	}
 }

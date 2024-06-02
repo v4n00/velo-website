@@ -6,7 +6,7 @@ interface SectionProps {
 }
 
 const Section = ({ children, className }: SectionProps) => {
-	return <div className={cn('flex justify-center items-center h-screen bg-slate-600', className)}>{children}</div>;
+	return <div className={cn('flex justify-center items-center h-screen', className)}>{children}</div>;
 };
 
 export default Section;
