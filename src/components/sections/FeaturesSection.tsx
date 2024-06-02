@@ -1,7 +1,7 @@
 import Section from './Section';
 
 const FeaturesSection = () => {
-	return <Section>world</Section>;
+	return <Section>Hello</Section>;
 };
 
 export default FeaturesSection;

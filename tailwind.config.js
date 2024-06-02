@@ -11,7 +11,14 @@ module.exports = {
 				'2xl': '1400px',
 			},
 		},
+		fontFamily: {
+			'roboto-mono': ['Roboto Mono', 'monospace'],
+			roboto: ['Roboto', 'sans-serif'],
+		},
 		extend: {
+			fontFamily: {
+				cocktail: ['Cocktail Shaker', 'cursive'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
