@@ -4,7 +4,7 @@
 
 @font-face {
 	font-family: 'Cocktail Shaker';
-	src: url('/fonts/cocktail-shaker.ttf');
+	src: url('fonts/cocktail-shaker.ttf');
 }
 
 @layer base {
