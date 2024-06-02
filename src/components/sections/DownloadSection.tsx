@@ -16,10 +16,12 @@ const DownloadSection = () => {
 							</div>
 						</div>
 						<div className="flex flex-col gap-3 font-roboto-mono">
-							<Button variant="default" className="text-lg font-extrabold">
-								<Download className="size-5 mr-2" />
-								DOWNLOAD VELO ARCHIVE v2.1.3
-							</Button>
+							<a href="velo/latest.zip" download="latest.zip">
+								<Button variant="default" className="text-lg font-extrabold">
+									<Download className="size-5 mr-2" />
+									DOWNLOAD VELO ARCHIVE v2.1.3
+								</Button>
+							</a>
 							<Button variant="secondary" className="text-lg font-extrabold">
 								INSTALLATION INSTRUCTIONS
 							</Button>
@@ -29,7 +31,6 @@ const DownloadSection = () => {
 						className="text-white z-10 bottom-2 absolute flex flex-col items-center cursor-pointer"
 						onClick={() => {
 							window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
-							console.log('hi');
 						}}
 					>
 						Read more! <ChevronsDown className="animate-bounce mt-1" />
