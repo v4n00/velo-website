@@ -12,7 +12,7 @@ const DownloadSection = () => {
 						<div className="flex flex-col items-center text-center text-3xl">
 							<div>Supercharge your</div>
 							<div className="flex flex-row">
-								<img src="public/img/SRLogo.webp" className="w-36 mr-1" /> experience!
+								<img src="/img/SRLogo.webp" className="w-36 mr-1" /> experience!
 							</div>
 						</div>
 						<div className="flex flex-col gap-3 font-roboto-mono">
@@ -37,7 +37,7 @@ const DownloadSection = () => {
 				</div>
 			</div>
 			<div className="w-5/6 relative h-full before:content-[' '] before:[transform:skew(15deg)] before:absolute before:top-0 before:right-0 before:left-0 before:bottom-0 before:bg-gradient-to-r before:from-background before:from-10%">
-				<video src="public/video/broll.webm" autoPlay loop muted className="w-full h-full [object-fit:cover]" />
+				<video src="/video/broll.webm" autoPlay loop muted className="w-full h-full [object-fit:cover]" />
 			</div>
 		</Section>
 	);
