@@ -14,7 +14,7 @@ const FeaturesSection = () => {
 		},
 		{
 			name: 'olsu',
-			avatar: '',
+			avatar: 'img/avatars/olsu.webp',
 			role: 'worked on the UI of the mod',
 			fallback: 'OL',
 		},
@@ -69,27 +69,27 @@ const FeaturesSection = () => {
 
 	const PopOutCard = ({ header, content }: { header: string; content: string }) => (
 		<Card className="max-w-sm text-center hover:transition-all hover:-translate-y-1 hover:shadow-md hover:shadow-primary-foreground">
-			<CardHeader>{header}</CardHeader>
-			<CardContent>{content}</CardContent>
+			<CardHeader className="pb-3 pt-4 text-xl font-bold font-roboto-mono">{header}</CardHeader>
+			<CardContent className="pb-4">{content}</CardContent>
 		</Card>
 	);
 
 	return (
 		<div className="flex flex-col justify-center items-center h-full">
-			<h1 className="mb-14">Features</h1>
+			<h1>Features</h1>
 			<h2 className="flex flex-row text-xl mb-2">
 				<p className="font-cocktail text-4xl -translate-y-2 text-primary drop-shadow-primary">Velo</p> &nbsp;is a general-purpose utility mod for&nbsp; <p className="font-cocktail text-3xl -translate-y-1.5 text-sky-500 drop-shadow-sky-500">SpeedRunners</p> &nbsp;made by&nbsp;
 				<HoverCardCreators name={creators[0].name} avatar={creators[0].avatar} role={creators[0].role} fallback={creators[0].fallback} />
 				&nbsp;and&nbsp;
 				<HoverCardCreators name={creators[1].name} avatar={creators[1].avatar} role={creators[1].role} fallback={creators[1].fallback} />
 			</h2>
-			<div className="flex flex-row justify-center items-center gap-10 mb-14">
+			<div className="h-full flex flex-row justify-center items-stretch gap-10 mb-14">
 				{featuresCardContents.map((card, index) => (
 					<PopOutCard key={index} header={card.header} content={card.content} />
 				))}
 			</div>
 			<h2 className="flex flex-row text-xl mb-2">
-				<p className="font-cocktail text-4xl -translate-y-2 text-primary drop-shadow-primary">Velo</p> &nbsp; obeys the following principles to ensure&nbsp; <p className="font-cocktail text-3xl -translate-y-1.5 text-green-500 drop-shadow-green-500">fair play</p>
+				<p className="font-cocktail text-4xl -translate-y-2 text-primary drop-shadow-primary">Velo</p> &nbsp; obeys the following principles to ensure&nbsp; <p className="font-cocktail text-3xl -translate-y-1.5 text-green-500 drop-shadow-green-500">consistency</p>
 			</h2>
 			<div className="h-full flex flex-row justify-center items-stretch gap-10">
 				{principlesCardContents.map((card, index) => (

@@ -45,7 +45,7 @@
 		color-scheme: dark;
 	}
 	h1 {
-		@apply font-cocktail text-8xl;
+		@apply font-cocktail text-8xl mb-14;
 	}
 }
 
