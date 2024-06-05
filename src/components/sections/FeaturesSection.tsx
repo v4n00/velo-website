@@ -8,7 +8,7 @@ const FeaturesSection = () => {
 	const creators = [
 		{
 			name: 'rbit',
-			avatar: '/img/avatars/rbit.webp',
+			avatar: 'img/avatars/rbit.webp',
 			role: 'worked on the functionality of the mod',
 			fallback: 'RB',
 		},
