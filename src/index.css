@@ -40,8 +40,6 @@
 	#root,
 	html {
 		@apply bg-background text-foreground m-0 h-full overflow-x-clip font-roboto;
-	}
-	#root {
 		color-scheme: dark;
 	}
 }
