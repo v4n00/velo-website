@@ -28,6 +28,8 @@
 		--border: 240 3.7% 15.9%;
 		--input: 240 3.7% 15.9%;
 		--ring: 240 4.9% 83.9%;
+		--stripe-color1: 22.3 100% 48.4%;
+		--stripe-color2: 25.4 100% 50%;
 		--radius: 0.75rem;
 	}
 }
@@ -41,5 +43,11 @@
 	html {
 		@apply bg-background text-foreground m-0 h-full overflow-x-clip font-roboto;
 		color-scheme: dark;
+	}
+}
+
+@layer components {
+	.danger-strip {
+		background: repeating-linear-gradient(45deg, hsl(var(--stripe-color1)), hsl(var(--stripe-color1)) 20px, hsl(var(--stripe-color2)) 10px, hsl(var(--stripe-color2)) 40px);
 	}
 }

@@ -1,24 +1,13 @@
+import useScrollFirstPage from '@/hooks/useScrollFirstPage';
 import useVeloData from '@/hooks/useVeloData';
-import { ChevronsDown, Download, Loader2 } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { ChevronsDown, Download, HardDriveDownload, Loader2 } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from '../ui/dialog';
 
 const DownloadSection = () => {
 	const { data, loading } = useVeloData();
-	const [userScrolled, setUserScrolled] = useState(false);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY === 0) setUserScrolled(false);
-			else setUserScrolled(true);
-		};
-
-		window.addEventListener('scroll', handleScroll);
-
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	const { isScrolled } = useScrollFirstPage();
 
 	return (
 		<div className="flex justify-center items-center h-screen">
@@ -32,42 +21,42 @@ const DownloadSection = () => {
 								<img src="img/SRLogo.webp" className="w-36 mr-1" /> experience!
 							</div>
 						</div>
-						<div className="flex flex-col items-center gap-3 font-roboto-mono">
-							<a href={`velo/${data?.fileName}`} download className={loading ? 'pointer-events-none cursor-default' : 'pointer-events-auto cursor-pointer'}>
-								<Button variant="ringHover" className="text-lg font-extrabold" disabled={loading}>
-									<Download className="size-5 mr-2" />
-									DOWNLOAD VELO {loading ? <Loader2 className="mx-5 animate-spin" /> : `v${data?.versionNumber}`}
-								</Button>
-							</a>
-							<Dialog>
-								<DialogTrigger asChild>
-									<Button variant="secondary" className="text-lg font-extrabold">
-										INSTALLATION INSTRUCTIONS
+						<div className="flex flex-col items-center gap-3">
+							<div className="flex flex-row items-center gap-3 font-roboto-mono">
+								<a href={`velo/${data?.fileName}`} download className={loading ? 'pointer-events-none cursor-default' : 'pointer-events-auto cursor-pointer'}>
+									<Button variant="ringHover" className="text-lg font-extrabold" disabled={loading}>
+										<Download className="size-5 mr-2" />
+										DOWNLOAD VELO {loading ? <Loader2 className="mx-5 animate-spin" /> : `v${data?.versionNumber}`}
 									</Button>
-								</DialogTrigger>
-								<DialogContent>
-									<DialogHeader>Installation Instructions</DialogHeader>
-									<ol type="1" className="list-decimal pl-5">
-										<li>Open Steam, right click "SpeedRunners" in your games list, hover over "Manage" and click on "Browse local files".</li>
-										<li>Open the Velo.zip file, select all files and folders and drag them into the game's installation directory. When asked, just click "Replace the files in the destination".</li>
-										<li>After that, you can launch your game from Steam like normal.</li>
-									</ol>
-								</DialogContent>
-							</Dialog>
+								</a>
+								<Dialog>
+									<DialogTrigger asChild>
+										<Button variant="secondary" className="text-lg font-extrabold">
+											<HardDriveDownload />
+										</Button>
+									</DialogTrigger>
+									<DialogContent>
+										<DialogHeader>Installation Instructions</DialogHeader>
+										<ol type="1" className="list-decimal pl-5">
+											<li>Open Steam, right click "SpeedRunners" in your games list, hover over "Manage" and click on "Browse local files".</li>
+											<li>Open the Velo.zip file, select all files and folders and drag them into the game's installation directory. When asked, just click "Replace the files in the destination".</li>
+											<li>After that, you can launch your game from Steam like normal.</li>
+										</ol>
+									</DialogContent>
+								</Dialog>
+							</div>
+							<Button variant="outline" className="text-lg w-full border-2" disabled>
+								View the leaderboards
+								<Badge variant="default" className="ml-1">
+									WIP
+								</Badge>
+							</Button>
 						</div>
 					</div>
-					<div className="z-10 bottom-40 absolute flex items-center">
-						<Button variant="outline" className="text-lg" disabled>
-							View the leaderboards
-							<Badge variant="default" className="ml-1">
-								WIP
-							</Badge>
-						</Button>
-					</div>
 					<div
-						className={`${!userScrolled ? 'opacity-100 cursor-pointer' : 'opacity-0 cursor-default'} transition-opacity ease-in-out delay-150 duration-300 z-10 bottom-2 absolute select-none flex flex-col items-center font-cocktail text-3xl`}
+						className={`${!isScrolled ? 'opacity-100 cursor-pointer' : 'opacity-0 cursor-default'} transition-opacity ease-in-out delay-150 duration-300 z-10 bottom-2 absolute select-none flex flex-col items-center font-cocktail text-3xl`}
 						onClick={() => {
-							if (!userScrolled) window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+							if (!isScrolled) window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
 						}}
 					>
 						Read more! <ChevronsDown className="animate-bounce mt-1" />
