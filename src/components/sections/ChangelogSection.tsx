@@ -1,7 +1,5 @@
-import Section from './Section';
-
 const ChangelogSection = () => {
-	return <Section>world!</Section>;
+	return <div>world!</div>;
 };
 
 export default ChangelogSection;

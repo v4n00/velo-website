@@ -16,6 +16,11 @@ module.exports = {
 			roboto: ['Roboto', 'sans-serif'],
 		},
 		extend: {
+			dropShadow: {
+				primary: '0 0 15px hsla(var(--primary) / 0.4)',
+				'sky-500': '0 0 15px hsla(200, 100%, 50%, 0.3)',
+				'green-500': '0 0 15px hsla(120, 100%, 50%, 0.2)',
+			},
 			fontFamily: {
 				cocktail: ['Cocktail Shaker', 'cursive'],
 			},

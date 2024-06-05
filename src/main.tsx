@@ -1,5 +1,13 @@
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
+import ErrorPage from './pages/ErrorPage';
+import LeaderboardsPage from './pages/LeaderboardsPage';
+import RootPage from './pages/RootPage';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
+const router = createBrowserRouter([
+	{ path: '/', element: <RootPage />, errorElement: <ErrorPage /> },
+	{ path: '/leaderboards', element: <LeaderboardsPage /> },
+]);
+
+ReactDOM.createRoot(document.getElementById('root')!).render(<RouterProvider router={router} />);

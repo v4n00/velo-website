@@ -3,7 +3,7 @@ import useVeloData from '@/hooks/useVeloData';
 import { Loader2, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const UpdateBadge = () => {
+const UpdaterBanner = () => {
 	const [isBannerActive, setIsBannerActive] = useState<boolean>(false);
 	const { isScrolled } = useScrollFirstPage();
 	const { data, loading } = useVeloData();
@@ -43,4 +43,4 @@ const UpdateBadge = () => {
 	);
 };
 
-export default UpdateBadge;
+export default UpdaterBanner;

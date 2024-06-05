@@ -1,11 +1,12 @@
 import useScrollFirstPage from '@/hooks/useScrollFirstPage';
 import useVeloData from '@/hooks/useVeloData';
 import { ChevronsDown, Download, HardDriveDownload, Loader2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from '../ui/dialog';
 
-const DownloadSection = () => {
+const LandingSection = () => {
 	const { data, loading } = useVeloData();
 	const { isScrolled } = useScrollFirstPage();
 
@@ -14,7 +15,7 @@ const DownloadSection = () => {
 			<div className="lg:w-3/12 w-full h-full flex flex-col justify-center items-center relative lg:after:content-[''] lg:after:absolute lg:after:bg-background lg:after:top-0 lg:after:bottom-0 lg:after:right-0 lg:after:w-screen lg:after:[transform:skew(15deg)_translateX(85px)] z-10">
 				<div className="relative flex flex-col z-10 lg:translate-x-10 translate-x-0 items-center h-full justify-center">
 					<div className="flex flex-col justify-center items-center gap-3">
-						<div className="text-9xl font-cocktail">Velo</div>
+						<div className="text-9xl font-cocktail text-primary drop-shadow-primary">Velo</div>
 						<div className="flex flex-col items-center text-center text-3xl">
 							<div>Supercharge your</div>
 							<div className="flex flex-row">
@@ -45,12 +46,14 @@ const DownloadSection = () => {
 									</DialogContent>
 								</Dialog>
 							</div>
-							<Button variant="outline" className="text-lg w-full border-2" disabled>
-								View the leaderboards
-								<Badge variant="default" className="ml-1">
-									WIP
-								</Badge>
-							</Button>
+							<Link to="/leaderboards" className="w-full">
+								<Button variant="outline" className="text-lg w-full border-2">
+									View the leaderboards
+									<Badge variant="default" className="ml-1">
+										WIP
+									</Badge>
+								</Button>
+							</Link>
 						</div>
 					</div>
 					<div
@@ -63,11 +66,11 @@ const DownloadSection = () => {
 					</div>
 				</div>
 			</div>
-			<div className="lg:w-5/6 w-0 relative h-full before:content-[' '] before:[transform:skew(15deg)] before:absolute before:top-0 before:right-0 before:left-0 before:bottom-0 before:bg-gradient-to-r before:from-background before:from-10%">
+			<div className="lg:w-5/6 w-0 relative h-full before:content-[' '] before:[transform:skew(15deg)] before:absolute before:top-0 before:right-0 before:left-0 before:bottom-0 fade-to-black">
 				<video src="video/broll.webm" autoPlay loop muted className="w-full h-full [object-fit:cover]" />
 			</div>
 		</div>
 	);
 };
 
-export default DownloadSection;
+export default LandingSection;
