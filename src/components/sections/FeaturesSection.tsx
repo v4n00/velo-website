@@ -26,7 +26,7 @@ const FeaturesSection = () => {
 			content: 'Velo is designed for ultimate customization. Missing a feature? Suggest it, and help make the mod even better for everyone!',
 		},
 		{
-			img: '',
+			img: 'img/art/excel-practice.webp',
 			header: 'Useful practice tools',
 			content: "Create savestates, display a speedometer, reveal hitboxes, simulate blindrunning - that's just a fraction of the features you can explore.",
 		},
@@ -61,7 +61,7 @@ const FeaturesSection = () => {
 					<AvatarImage src={avatar} alt={`${name}'s avatar`} />
 					<AvatarFallback>{fallback}</AvatarFallback>
 				</Avatar>
-				<div className="ml-2 text-sm">
+				<div className="ml-2 text-sm flex flex-col items-start">
 					<p>@{name}</p>
 					<p className="text-sm text-popover-foreground/60">&gt; {role}</p>
 				</div>
@@ -74,7 +74,7 @@ const FeaturesSection = () => {
 			<div className="flex justify-center p-4 items-center">
 				<img src={img} className="size-[200px]" />
 			</div>
-			<CardHeader className="pb-3 pt-0 text-2xl font-bold font-roboto-mono">{header}</CardHeader>
+			<CardHeader className="pb-4 pt-0 text-2xl font-bold font-roboto-mono">{header}</CardHeader>
 			<CardContent className="pb-4">{content}</CardContent>
 		</Card>
 	);
