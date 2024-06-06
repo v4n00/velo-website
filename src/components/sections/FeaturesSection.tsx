@@ -21,27 +21,29 @@ const FeaturesSection = () => {
 	];
 	const featuresCardContents = [
 		{
-			img: 'test',
+			img: 'img/art/dashwell-customization.webp',
 			header: 'Maximum customizability',
-			content: 'The mod should provide you with as much customizability for all of its features as possible. If you miss a certain customization, feel free to make suggestions to further improve the mod.',
+			content: 'Velo is designed for ultimate customization. Missing a feature? Suggest it, and help make the mod even better for everyone!',
 		},
 		{
-			img: 'test',
+			img: '',
 			header: 'Useful practice tools',
-			content: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+			content: "Create savestates, display a speedometer, reveal hitboxes, simulate blindrunning - that's just a fraction of the features you can explore.",
 		},
 		{
-			img: 'test',
-			header: 'Leaderboards',
-			content: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+			img: 'img/art/lucjadore-leaderboard.webp',
+			header: 'Custom leaderboards',
+			content: 'Forget speedrun.com, Velo leaderboards are the new go-to! Enjoy enhanced replays and ghosts to easily compare your runs.',
 		},
 	];
 	const principlesCardContents = [
 		{
+			img: '',
 			header: 'No cheating',
 			content: "This is not a cheating mod. While it allows you to make changes to the game's physics like disabling the grapple cooldown, this is limited to local games only and will generally be watermarked.",
 		},
 		{
+			img: '',
 			header: 'No changes by default',
 			content: 'If all settings are set to their default, the game will behave just like an unmodified version. The only notable exceptions are the Velo leaderboard system, which is enabled by default, and a few local game settings to help making runs comply with the rules.',
 		},
@@ -50,7 +52,7 @@ const FeaturesSection = () => {
 	const HoverCardCreators = ({ name, avatar, role, fallback }: { name: string; avatar: string; role: string; fallback: string }) => (
 		<HoverCard openDelay={100} closeDelay={100}>
 			<HoverCardTrigger>
-				<Button variant="linkHover1" className="font-normal p-0 text-xl -translate-y-1.5 no-focus">
+				<Button variant="linkHover1" className="font-normal p-0 text-xl focus-visible:ring-0 focus-visible:ring-offset-0">
 					{name}
 				</Button>
 			</HoverCardTrigger>
@@ -67,9 +69,12 @@ const FeaturesSection = () => {
 		</HoverCard>
 	);
 
-	const PopOutCard = ({ header, content }: { header: string; content: string }) => (
+	const PopOutCard = ({ img, header, content }: { img: string; header: string; content: string }) => (
 		<Card className="max-w-sm text-center hover:transition-all hover:-translate-y-1 hover:shadow-md hover:shadow-primary-foreground">
-			<CardHeader className="pb-3 pt-4 text-xl font-bold font-roboto-mono">{header}</CardHeader>
+			<div className="flex justify-center p-4 items-center">
+				<img src={img} className="size-[200px]" />
+			</div>
+			<CardHeader className="pb-3 pt-0 text-2xl font-bold font-roboto-mono">{header}</CardHeader>
 			<CardContent className="pb-4">{content}</CardContent>
 		</Card>
 	);
@@ -77,23 +82,23 @@ const FeaturesSection = () => {
 	return (
 		<div className="flex flex-col justify-center items-center h-full">
 			<h1>Features</h1>
-			<h2 className="flex flex-row text-xl mb-2">
-				<p className="font-cocktail text-4xl -translate-y-2 text-primary drop-shadow-primary">Velo</p> &nbsp;is a general-purpose utility mod for&nbsp; <p className="font-cocktail text-3xl -translate-y-1.5 text-sky-500 drop-shadow-sky-500">SpeedRunners</p> &nbsp;made by&nbsp;
+			<div className="block text-xl mb-6 flex-wrap break-keep text-center">
+				<span className="font-cocktail text-4xl text-primary drop-shadow-primary">Velo</span> is a general-purpose utility mod for <span className="font-cocktail text-3xl text-sky-500 drop-shadow-sky-500">SpeedRunners</span> made by&nbsp;
 				<HoverCardCreators name={creators[0].name} avatar={creators[0].avatar} role={creators[0].role} fallback={creators[0].fallback} />
 				&nbsp;and&nbsp;
 				<HoverCardCreators name={creators[1].name} avatar={creators[1].avatar} role={creators[1].role} fallback={creators[1].fallback} />
-			</h2>
-			<div className="h-full flex flex-row justify-center items-stretch gap-10 mb-14">
+			</div>
+			<div className="h-full flex md:flex-row flex-col justify-center items-stretch gap-10 mb-14">
 				{featuresCardContents.map((card, index) => (
-					<PopOutCard key={index} header={card.header} content={card.content} />
+					<PopOutCard key={index} img={card.img} header={card.header} content={card.content} />
 				))}
 			</div>
-			<h2 className="flex flex-row text-xl mb-2">
-				<p className="font-cocktail text-4xl -translate-y-2 text-primary drop-shadow-primary">Velo</p> &nbsp; obeys the following principles to ensure&nbsp; <p className="font-cocktail text-3xl -translate-y-1.5 text-green-500 drop-shadow-green-500">consistency</p>
-			</h2>
-			<div className="h-full flex flex-row justify-center items-stretch gap-10">
+			<div className="block text-xl mb-6 flex-wrap break-keep text-center">
+				<span className="font-cocktail text-4xl text-primary drop-shadow-primary">Velo</span> obeys the following principles to ensure <span className="font-cocktail text-3xl text-green-500 drop-shadow-green-500">consistency</span> for everyone
+			</div>
+			<div className="h-full flex md:flex-row flex-col justify-center items-stretch gap-10">
 				{principlesCardContents.map((card, index) => (
-					<PopOutCard key={index} header={card.header} content={card.content} />
+					<PopOutCard key={index} img={card.img} header={card.header} content={card.content} />
 				))}
 			</div>
 		</div>

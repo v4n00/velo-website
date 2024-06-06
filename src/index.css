@@ -56,7 +56,4 @@
 	.fade-to-black::before {
 		background-image: linear-gradient(to right, hsl(var(--background)), hsl(var(--background)) 10%, rgba(0, 0, 0, 0));
 	}
-	.no-focus {
-		@apply focus-visible:ring-0 focus-visible:ring-offset-0;
-	}
 }

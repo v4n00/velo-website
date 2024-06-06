@@ -19,7 +19,7 @@ const LandingSection = () => {
 						<div className="flex flex-col items-center text-center text-3xl">
 							<div>Supercharge your</div>
 							<div className="flex flex-row">
-								<img src="img/SRLogo.webp" className="w-36 mr-1" /> experience!
+								<img src="img/logo/SpeedRunners.webp" className="w-36 mr-1" /> experience!
 							</div>
 						</div>
 						<div className="flex flex-col items-center gap-3">
