@@ -3,16 +3,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '..
 const CommonQuestionsSection = () => {
 	const questions = [
 		{
-			question: 'How do I uninstall Velo?',
-			answer: 'To uninstall, open Steam, right click "SpeedRunners" in your games list, select "Properties..." -> "Installed Files" -> "Verify integrity of game files". Please note that this will completely clear all mods that you have installed. In case you want to keep them, please backup the "Content" folder.',
-		},
-		{
 			question: 'How do I get started?',
 			answer: 'After launching your game, just press F1 and it will open a menu with all of Velo\'s settings. To enable a specific module, just left click the little checkbox to the left of "enabled". To assign a hotkey, left click the text box to the left of the checkbox and press the desired key. By right clicking you can unassign the hotkey again.',
-		},
-		{
-			question: 'What is the difference between Velo new and Velo old?',
-			answer: 'Velo new is built upon the 25/Mar/2023 update of the game, which moved its graphics library from XNA to FNA, while Velo old is based on the prior version that still uses XNA. XNA is based on DirectX 9 and has long been discontinued, while with FNA you can choose between DirectX 11, OpenGL and Vulkan. You can force a specific driver by putting "+driver D3D11/OpenGL/Vulkan" to your game\'s launch options. Please note that Velo currently does not support Vulkan! In case you experienced performance issues with the new update, you may want to consider using Velo old over Velo new.',
 		},
 		{
 			question: 'How do color transitions work?',
@@ -36,17 +28,29 @@ const CommonQuestionsSection = () => {
 		},
 		{
 			question: "My game crashed, was it Velo's fault?",
-			answer: 'Most of Velo\'s settings should be safe and playing on default settings will not cause any issues at all. The only really dangerous setting is "multithreaded network", which you may want to consider disabling if you experience more frequent crashes. Loading savestates may also cause crashes if unlucky. Don\'t load savestates made on different maps or it will definitely crash. If a crash is caused by opening the settings menu, please make sure Velo is correctly installed (drag ALL files and folders from the Velo .zip) and if that doesn\'t fix the issue, consider switching your driver from D3D11 to OpenGL or back, or switching from Velo new to Velo old or back. For any crash, I would greatly appreciate if you could send me the "stacktrace.txt" file it creates in the game\'s directory to help me make the game and mod even more crash-proof in future.',
+			answer: 'Most of Velo\'s settings should be safe and playing on default settings will not cause any issues at all. The only really dangerous setting is "multithreaded network", which you may want to consider disabling if you experience more frequent crashes. Loading savestates may also cause crashes if unlucky. Don\'t load savestates made on different maps or it will definitely crash. If a crash is caused by opening the settings menu, please make sure Velo is correctly installed (drag ALL files and folders from the Velo.zip) and if that doesn\'t fix the issue, consider switching your driver from D3D11 to OpenGL or back, or switching from Velo new to Velo old or back. For any crash, I would greatly appreciate if you could send me the "stacktrace.txt" file it creates in the game\'s directory to help me make the game and mod even more crash-proof in future.',
+		},
+		{
+			question: 'What is the difference between Velo new and Velo old?',
+			answer: 'Velo new is built upon the 25/Mar/2023 update of the game, which moved its graphics library from XNA to FNA, while Velo old is based on the prior version that still uses XNA. XNA is based on DirectX 9 and has long been discontinued, while with FNA you can choose between DirectX 11, OpenGL and Vulkan. You can force a specific driver by putting "+driver D3D11/OpenGL/Vulkan" to your game\'s launch options. Please note that Velo currently does not support Vulkan! In case you experienced performance issues with the new update, you may want to consider using Velo old over Velo new.',
 		},
 		{
 			question: 'I am unable to press F1, how do I get access to the menu?',
-			answer: 'In case you cannot press F1 for some reason, open Velo\\UI.json and edit the number right next to "Hotkey" to assign it to a different hotkey. This number represents a virtual-key  code. To get corresponding code for a specific key, please refer to "https://keycode-visualizer.netlify.app/". Then save the file and restart your game.',
+			answer: (
+				<>
+					In case you cannot press F1 for some reason, open Velo\UI.json and edit the number right next to "Hotkey" to assign it to a different hotkey. This number represents a virtual-key code. To get corresponding code for a specific key, please refer to{' '}
+					<a href="https://keycode-visualizer.netlify.app/" target="_blank" className="underline">
+						this website
+					</a>
+					. Then save the file and restart your game.
+				</>
+			),
 		},
 	];
 
 	return (
 		<div className="flex flex-col justify-center items-center h-full">
-			<h1 className="text-center">Common questions</h1>
+			<h1 className="text-center font-cocktail text-8xl mb-14">Common questions</h1>
 
 			<Accordion type="single" collapsible className="lg:max-w-screen-lg max-w-screen-md lg:w-screen">
 				{questions.map((question, index) => (

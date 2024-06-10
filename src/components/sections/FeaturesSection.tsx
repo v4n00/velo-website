@@ -13,7 +13,7 @@ const FeaturesSection = () => {
 			fallback: 'RB',
 		},
 		{
-			name: 'olsu',
+			name: '_olsu',
 			avatar: 'img/avatars/olsu.webp',
 			role: 'worked on the UI of the mod',
 			fallback: 'OL',
@@ -22,30 +22,30 @@ const FeaturesSection = () => {
 	const featuresCardContents = [
 		{
 			img: 'img/art/dashwell-customization.webp',
-			header: 'Maximum customizability',
+			header: 'Maximum Customizability',
 			content: 'Velo is designed for ultimate customization. Missing a feature? Suggest it, and help make the mod even better for everyone!',
 		},
 		{
 			img: 'img/art/excel-practice.webp',
-			header: 'Useful practice tools',
+			header: 'Useful Practice Tools',
 			content: "Create savestates, display a speedometer, reveal hitboxes, simulate blindrunning - that's just a fraction of the features you can explore.",
 		},
 		{
 			img: 'img/art/lucjadore-leaderboard.webp',
-			header: 'Custom leaderboards',
+			header: 'Custom Leaderboards',
 			content: 'Forget speedrun.com, Velo leaderboards are the new go-to! Enjoy enhanced replays and ghosts to easily compare your runs.',
 		},
 	];
 	const principlesCardContents = [
 		{
-			img: '',
-			header: 'No cheating',
-			content: "This is not a cheating mod. While it allows you to make changes to the game's physics like disabling the grapple cooldown, this is limited to local games only and will generally be watermarked.",
+			img: 'img/art/jaibild-cheater.webp',
+			header: 'No Cheating',
+			content: "This mod isn't for cheating. It lets you tweak game physics, like disabling grapple cooldown, but only in local games with clear watermarks.",
 		},
 		{
-			img: '',
-			header: 'No changes by default',
-			content: 'If all settings are set to their default, the game will behave just like an unmodified version. The only notable exceptions are the Velo leaderboard system, which is enabled by default, and a few local game settings to help making runs comply with the rules.',
+			img: 'img/art/cosmo-default.webp',
+			header: 'No Changes By Default',
+			content: 'With default settings, the game runs as if unmodified. The exceptions are the Velo leaderboard system, which is on by default.',
 		},
 	];
 
@@ -75,13 +75,13 @@ const FeaturesSection = () => {
 				<img src={img} className="size-[200px]" />
 			</div>
 			<CardHeader className="pb-4 pt-0 text-2xl font-bold font-roboto-mono">{header}</CardHeader>
-			<CardContent className="pb-4">{content}</CardContent>
+			<CardContent className="pb-6">{content}</CardContent>
 		</Card>
 	);
 
 	return (
 		<div className="flex flex-col justify-center items-center h-full">
-			<h1>Features</h1>
+			<h1 className="font-cocktail text-8xl mb-14">Features</h1>
 			<div className="block text-xl mb-6 flex-wrap break-keep text-center">
 				<span className="font-cocktail text-4xl text-primary drop-shadow-primary">Velo</span> is a general-purpose utility mod for <span className="font-cocktail text-3xl text-sky-500 drop-shadow-sky-500">SpeedRunners</span> made by&nbsp;
 				<HoverCardCreators name={creators[0].name} avatar={creators[0].avatar} role={creators[0].role} fallback={creators[0].fallback} />

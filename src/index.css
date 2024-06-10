@@ -42,10 +42,10 @@
 	#root,
 	html {
 		@apply bg-background text-foreground m-0 h-full overflow-x-clip font-roboto;
-		color-scheme: dark;
+		scrollbar-width: none;
 	}
-	h1 {
-		@apply font-cocktail text-8xl mb-14;
+	::-webkit-scrollbar {
+		display: none;
 	}
 }
 

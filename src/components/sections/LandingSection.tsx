@@ -37,12 +37,18 @@ const LandingSection = () => {
 										</Button>
 									</DialogTrigger>
 									<DialogContent>
-										<DialogHeader>Installation Instructions</DialogHeader>
+										<DialogHeader className="font-bold font-roboto-mono text-2xl">Install Instructions</DialogHeader>
 										<ol type="1" className="list-decimal pl-5">
 											<li>Open Steam, right click "SpeedRunners" in your games list, hover over "Manage" and click on "Browse local files".</li>
 											<li>Open the Velo.zip file, select all files and folders and drag them into the game's installation directory. When asked, just click "Replace the files in the destination".</li>
-											<li>After that, you can launch your game from Steam like normal.</li>
 										</ol>
+										<p>After that, you can launch your game from Steam like normal.</p>
+										<DialogHeader className="font-bold font-roboto-mono text-2xl">Uninstall Instructions</DialogHeader>
+										<ol type="1" className="list-decimal pl-5">
+											<li>Open Steam, right click "SpeedRunners" in your games list and click "Properties".</li>
+											<li>Go to "Installed Files" and click "Verify integrity of game files".</li>
+										</ol>
+										<p>Please note that this will completely clear all mods that you have installed. In case you want to keep them, please backup the "Content" folder.</p>
 									</DialogContent>
 								</Dialog>
 							</div>
