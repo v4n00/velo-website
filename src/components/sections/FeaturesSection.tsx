@@ -80,8 +80,8 @@ const FeaturesSection = () => {
 	);
 
 	return (
-		<div className="flex flex-col justify-center items-center h-full">
-			<h1 className="font-cocktail text-8xl mb-14">Features</h1>
+		<div className="page-section">
+			<h1 className="page-title">Features</h1>
 			<div className="block text-xl mb-6 flex-wrap break-keep text-center">
 				<span className="font-cocktail text-4xl text-primary drop-shadow-primary">Velo</span> is a general-purpose utility mod for <span className="font-cocktail text-3xl text-sky-500 drop-shadow-sky-500">SpeedRunners</span> made by&nbsp;
 				<HoverCardCreators name={creators[0].name} avatar={creators[0].avatar} role={creators[0].role} fallback={creators[0].fallback} />

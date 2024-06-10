@@ -6,8 +6,9 @@ import LeaderboardsPage from './pages/LeaderboardsPage';
 import RootPage from './pages/RootPage';
 
 const router = createBrowserRouter([
-	{ path: '/velo-website', element: <RootPage />, errorElement: <ErrorPage /> },
-	{ path: '/velo-website/leaderboards', element: <LeaderboardsPage /> },
+	{ path: '/', element: <RootPage />, errorElement: <ErrorPage /> },
+	{ path: '/changelogs', element: <RootPage /> },
+	{ path: '/leaderboards', element: <LeaderboardsPage /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(<RouterProvider router={router} />);

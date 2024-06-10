@@ -1,6 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 
-const CommonQuestionsSection = () => {
+const QuestionsSection = () => {
 	const questions = [
 		{
 			question: 'How do I get started?',
@@ -49,8 +49,8 @@ const CommonQuestionsSection = () => {
 	];
 
 	return (
-		<div className="flex flex-col justify-center items-center h-full">
-			<h1 className="text-center font-cocktail text-8xl mb-14">Common questions</h1>
+		<div className="page-section">
+			<h1 className="page-title">Questions & Answers</h1>
 
 			<Accordion type="single" collapsible className="lg:max-w-screen-lg max-w-screen-md lg:w-screen">
 				{questions.map((question, index) => (
@@ -64,4 +64,4 @@ const CommonQuestionsSection = () => {
 	);
 };
 
-export default CommonQuestionsSection;
+export default QuestionsSection;

@@ -47,6 +47,17 @@
 	::-webkit-scrollbar {
 		display: none;
 	}
+	.page-title {
+		@apply text-center font-cocktail text-8xl mb-14;
+	}
+	.page-section {
+		@apply flex flex-col justify-center items-center h-full;
+	}
+	.changelogs {
+		h1 {
+			@apply text-primary;
+		}
+	}
 }
 
 @layer components {
