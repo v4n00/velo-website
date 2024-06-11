@@ -4,6 +4,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [react()],
+	assetsInclude: ['**/*.md'],
 	base: '/velo-website/',
 	resolve: {
 		alias: {

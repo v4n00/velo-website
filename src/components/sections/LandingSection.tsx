@@ -53,7 +53,7 @@ const LandingSection = () => {
 								</Dialog>
 							</div>
 							<Link to="/leaderboards" className="w-full">
-								<Button variant="outline" className="text-lg w-full border-2">
+								<Button variant="outline" className="text-lg w-full border-2" disabled>
 									View the leaderboards
 									<Badge variant="default" className="ml-1">
 										WIP

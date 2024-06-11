@@ -14,10 +14,9 @@ const RootPage = () => {
 	const ref = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		if (location.pathname === '/changelogs' && ref.current) {
+		if (location.pathname === `${import.meta.env.BASE_URL}changelogs` && ref.current) {
 			ref.current.scrollIntoView({ behavior: 'smooth' });
 		}
-		location.pathname = '/';
 	}, [location]);
 
 	return (

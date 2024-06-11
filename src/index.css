@@ -55,7 +55,22 @@
 	}
 	.changelogs {
 		h1 {
-			@apply text-primary;
+			@apply text-primary text-5xl text-center font-cocktail mb-1;
+		}
+		h2 {
+			@apply text-primary text-3xl font-roboto-mono underline mb-1 mt-2;
+		}
+		p:has(code) {
+			@apply text-center text-xl;
+		}
+		ul {
+			@apply text-lg list-disc pl-6;
+		}
+		blockquote {
+			@apply text-lg text-foreground/50 italic pl-10;
+		}
+		blockquote p {
+			@apply before:content-['>\00a0'];
 		}
 	}
 }
