@@ -1,7 +1,6 @@
 import useScrollFirstPage from '@/hooks/useScrollFirstPage';
 import useVeloData from '@/hooks/useVeloData';
 import { ChevronsDown, Download, HardDriveDownload, Loader2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from '../ui/dialog';
@@ -52,14 +51,14 @@ const LandingSection = () => {
 									</DialogContent>
 								</Dialog>
 							</div>
-							<Link to="/leaderboards" className="w-full">
-								<Button variant="outline" className="text-lg w-full border-2" disabled>
-									View the leaderboards
-									<Badge variant="default" className="ml-1">
-										WIP
-									</Badge>
-								</Button>
-							</Link>
+							{/* <Link to="/leaderboards" className="w-full"> */}
+							<Button variant="outline" className="text-lg w-full border-2" disabled>
+								View the leaderboards
+								<Badge variant="default" className="ml-1">
+									WIP
+								</Badge>
+							</Button>
+							{/* </Link> */}
 						</div>
 					</div>
 					<div

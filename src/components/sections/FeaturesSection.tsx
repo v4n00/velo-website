@@ -8,12 +8,14 @@ const FeaturesSection = () => {
 	const creators = [
 		{
 			name: 'rbit',
+			tag: 'rbit',
 			avatar: 'img/avatars/rbit.webp',
 			role: 'worked on the functionality of the mod',
 			fallback: 'RB',
 		},
 		{
-			name: '_olsu',
+			name: 'olsu',
+			tag: '_olsu',
 			avatar: 'img/avatars/olsu.webp',
 			role: 'worked on the UI of the mod',
 			fallback: 'OL',
@@ -49,7 +51,7 @@ const FeaturesSection = () => {
 		},
 	];
 
-	const HoverCardCreators = ({ name, avatar, role, fallback }: { name: string; avatar: string; role: string; fallback: string }) => (
+	const HoverCardCreators = ({ name, tag, avatar, role, fallback }: { name: string; tag: string; avatar: string; role: string; fallback: string }) => (
 		<HoverCard openDelay={100} closeDelay={100}>
 			<HoverCardTrigger>
 				<Button variant="linkHover1" className="font-normal p-0 text-xl focus-visible:ring-0 focus-visible:ring-offset-0">
@@ -62,7 +64,7 @@ const FeaturesSection = () => {
 					<AvatarFallback>{fallback}</AvatarFallback>
 				</Avatar>
 				<div className="ml-2 text-sm flex flex-col items-start">
-					<p>@{name}</p>
+					<p>@{tag}</p>
 					<p className="text-sm text-popover-foreground/60">&gt; {role}</p>
 				</div>
 			</HoverCardContent>
@@ -84,9 +86,9 @@ const FeaturesSection = () => {
 			<h1 className="page-title">Features</h1>
 			<div className="block text-xl mb-6 flex-wrap break-keep text-center">
 				<span className="font-cocktail text-4xl text-primary drop-shadow-primary">Velo</span> is a general-purpose utility mod for <span className="font-cocktail text-3xl text-sky-500 drop-shadow-sky-500">SpeedRunners</span> made by&nbsp;
-				<HoverCardCreators name={creators[0].name} avatar={creators[0].avatar} role={creators[0].role} fallback={creators[0].fallback} />
+				<HoverCardCreators name={creators[0].name} tag={creators[0].tag} avatar={creators[0].avatar} role={creators[0].role} fallback={creators[0].fallback} />
 				&nbsp;and&nbsp;
-				<HoverCardCreators name={creators[1].name} avatar={creators[1].avatar} role={creators[1].role} fallback={creators[1].fallback} />
+				<HoverCardCreators name={creators[1].name} tag={creators[1].tag} avatar={creators[1].avatar} role={creators[1].role} fallback={creators[1].fallback} />
 			</div>
 			<div className="h-full flex md:flex-row flex-col justify-center items-stretch gap-10 mb-14">
 				{featuresCardContents.map((card, index) => (
