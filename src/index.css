@@ -42,11 +42,11 @@
 	#root,
 	html {
 		@apply bg-background text-foreground m-0 h-full overflow-x-clip font-roboto;
-		scrollbar-width: none;
+		/* scrollbar-width: none; */
 	}
-	::-webkit-scrollbar {
+	/* ::-webkit-scrollbar {
 		display: none;
-	}
+	} */
 	.page-title {
 		@apply text-center font-cocktail text-8xl mb-14;
 	}

@@ -13,19 +13,21 @@ const ChangelogsSection = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
 		const getChangelogs = async () => {
 			const allPostFiles = import.meta.glob('/public/velo/changelogs/*.md');
 			const iterablePostFiles = Object.entries(allPostFiles).sort((a, b) => parseInt(b[0].split('/').pop()!) - parseInt(a[0].split('/').pop()!));
+			console.log('initial', iterablePostFiles);
 			const changelogs: string[] = [];
 
-			iterablePostFiles.forEach(async (arr) => {
-				const path = arr[0].slice('/public/'.length); // funny hack because vite sucks
-				try {
+			const processPostFiles = async () => {
+				for (let i = 0; i < iterablePostFiles.length; i++) {
+					const arr = iterablePostFiles[i];
+					const path = arr[0].slice('/public/'.length); // funny hack because vite sucks
+
 					const text = await (await fetch(path)).text();
 					changelogs.push(text);
-				} finally {
-					setLoading(false);
 				}
-			});
-
-			setLogFiles(changelogs);
+				setLogFiles(changelogs);
+				setLoading(false);
+			};
+			processPostFiles();
 		};
 		getChangelogs();
 	}, []);
@@ -38,9 +40,9 @@ const ChangelogsSection = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
 					{!loading ? (
 						logFiles.map((logFile, index) => (
 							<CarouselItem key={index}>
-								<Card className="h-[60vh] m-1 p-6 select-none cursor-ew-resize">
-									<ScrollArea>
-										<Markdown className="changelogs">{logFile}</Markdown>
+								<Card className="h-[60vh] m-1 p-6">
+									<ScrollArea className="h-[500px] select-none cursor-default">
+										<Markdown className="changelogs pr-3">{logFile}</Markdown>
 									</ScrollArea>
 								</Card>
 							</CarouselItem>
