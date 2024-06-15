@@ -13,7 +13,6 @@ const ChangelogsSection = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
 		const getChangelogs = async () => {
 			const allPostFiles = import.meta.glob('/public/velo/changelogs/*.md');
 			const iterablePostFiles = Object.entries(allPostFiles).sort((a, b) => parseInt(b[0].split('/').pop()!) - parseInt(a[0].split('/').pop()!));
-			console.log('initial', iterablePostFiles);
 			const changelogs: string[] = [];
 
 			const processPostFiles = async () => {

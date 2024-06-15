@@ -33,7 +33,6 @@ const main = async () => {
 		if (doUpdate.toLowerCase() === 'y') {
 			jsonData.fileName = newVeloFileName;
 			jsonData.versionNumber = newVersionNumber;
-			console.log(jsonData.bannerVersion);
 			jsonData.bannerVersion = jsonData.bannerVersion === undefined ? 0 : jsonData.bannerVersion + 1;
 
 			fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData));
